@@ -4,6 +4,7 @@ from datetime import timedelta
 
 from .db import init_driver
 from .views.common import common_views
+from .views.auth import auth_views
 
 
 def create_app():
@@ -28,5 +29,6 @@ def create_app():
         init_driver(uri, username, password)
 
     app.register_blueprint(common_views)
+    app.register_blueprint(auth_views)
 
     return app
